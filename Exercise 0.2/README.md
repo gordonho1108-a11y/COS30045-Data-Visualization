@@ -62,8 +62,9 @@ energy-webpage-v1
 │
 ├── index.html
 └── README.md
+```
 
-Generative AI Declaration
+# Generative AI Declaration
 
 Project: Appliance Energy Consumption Website (Exercise 0.2, COS30045)
 
@@ -84,6 +85,6 @@ I replaced the placeholder logo with the official logo provided in the exercise.
 I replaced placeholder text (FAQ answers, TV table figures, About Us copy) 
 I tested the site in the browser and fixed/adjusted
 
- Reflection on Using Generative AI in This Workflow
+Reflection on Using Generative AI in This Workflow
 
 Generative AI was useful for quickly scaffolding a working three-page site that satisfied the exercise's structural requirements (navigation, external CSS, FAQ accordion, folder structure), which let more time be spent understanding how the HTML, CSS, and JavaScript work together rather than typing out boilerplate. At the same time, relying on AI-generated code means it is important to actually read and understand every part of it — for example how the FAQ accordion toggles a CSS class instead of showing/hiding content directly, and how window.location.pathname is used to detect the active page — rather than submitting it unexamined. All AI-generated content was reviewed, and placeholder text/images were treated as a starting point to be replaced with original content before final submission.
