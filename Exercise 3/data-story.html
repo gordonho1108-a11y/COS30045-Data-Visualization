@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Story: TV Energy Consumption | Appliance Energy Consumption Website</title>
+  <meta name="description" content="A data story exploring how screen size, display technology and energy star ratings affect television energy consumption." />
+  <link rel="icon" href="assets/img/PowerIcon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="index.html" aria-label="Appliance Energy Consumption Website — go to Home">
+        <img class="nav__logo" src="assets/img/PowerIcon.png" alt="Power logo" />
+        <span class="nav__title">Appliance Energy<span>Consumption Website</span></span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="televisions.html">Televisions</a></li>
+        <li><a href="data-story.html" class="is-active" aria-current="page">Data Story</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div>
+        <p class="hero__eyebrow">Data story · TV energy consumption</p>
+        <h1>Bigger, brighter, hungrier: what TV specs really cost in energy</h1>
+        <p>
+          Televisions have grown larger and sharper every year, but few buyers stop to ask
+          what that extra screen real estate costs in running power. This story walks through
+          the TV energy consumption dataset to show how screen size, display technology and
+          energy star ratings combine to shape a television's yearly running cost — and what
+          that means for choosing a more efficient set.
+        </p>
+        <a class="btn" href="#story">Read the story</a>
+      </div>
+      <div class="hero__art">
+        <img class="bolt-badge" src="assets/img/PowerIcon.png" alt="" aria-hidden="true" />
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <h2>Who this story is for</h2>
+      <p class="section__lede">
+        Three audiences shaped how this story is told, and what it emphasises.
+      </p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Everyday consumers</h3>
+          <p>Shoppers comparing televisions who want a plain-English sense of how size and
+            technology choices affect their power bill.</p>
+        </article>
+        <article class="card">
+          <h3>Policy makers &amp; regulators</h3>
+          <p>Readers interested in broader trends in household energy consumption and where
+            efficiency labelling is making the most difference.</p>
+        </article>
+        <article class="card">
+          <h3>Researchers</h3>
+          <p>People studying energy efficiency in consumer electronics who want a quick,
+            visual summary before digging into the full dataset.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <h2>The story, step by step</h2>
+      <p class="section__lede">
+        Three questions guide this story: how much does screen size matter, how much does
+        display technology matter, and does an energy star rating actually predict lower
+        running costs?
+      </p>
+
+      <div class="story-step">
+        <div class="story-step__text">
+          <span class="story-step__num">1</span>
+          <h3>Screen size is the first lever — and the biggest one</h3>
+          <p>
+            Across the dataset, average labelled energy consumption climbs steadily — and
+            then sharply — as screen size increases. Sets in the 16"–30" range average well
+            under 200 kWh/year, while sets 88" and above average over 1,000 kWh/year, with a
+            couple of sizes topping 1,600 kWh/year. For a shopper choosing between "big
+            enough" and "as big as possible," this is the single largest factor in the final
+            energy bill.
+          </p>
+        </div>
+        <div class="chart-card chart-card--image">
+          <img src="assets/img/tv-size-energy-chart.png" alt="KNIME bar chart of average labelled energy consumption in kWh per year by screen size in inches, showing a steady increase from smaller to larger screens" />
+        </div>
+      </div>
+
+      <div class="story-step story-step--reverse">
+        <div class="story-step__text">
+          <span class="story-step__num">2</span>
+          <h3>Display technology changes the picture at the same size</h3>
+          <p>
+            Size alone doesn't tell the whole story. In the dataset, sets grouped by
+            <code>Screen_Tech</code> show OLED panels carrying the highest average labelled
+            energy consumption, LCD (LED) close behind, and standard LCD noticeably lower —
+            a result of how each technology lights individual pixels. Two televisions of a
+            similar size can still land on quite different running costs depending on the
+            panel technology underneath.
+          </p>
+        </div>
+        <div class="chart-card chart-card--image">
+          <img src="assets/img/tv-tech-energy-chart.png" alt="KNIME bar chart comparing average screen size and average labelled energy consumption in kWh per year across LCD (LED), OLED and LCD televisions" />
+        </div>
+      </div>
+
+      <div class="story-step">
+        <div class="story-step__text">
+          <span class="story-step__num">3</span>
+          <h3>Energy star ratings track real savings</h3>
+          <p>
+            Encouragingly, the energy star rating printed on the box lines up closely with
+            actual outcomes: average labelled energy consumption falls steadily from around
+            1,190 kWh/year at the lowest ratings down to around 160 kWh/year at the highest —
+            a nearly seven-fold difference across the rating scale. For shoppers, the star
+            rating is a genuinely reliable shortcut for comparing running costs at a glance.
+          </p>
+        </div>
+        <div class="chart-card chart-card--image">
+          <img src="assets/img/tv-rating-energy-chart.png" alt="KNIME bar chart of average labelled energy consumption in kWh per year by energy star rating, showing a steady decrease from around 1,190 kWh at 1.0 stars down to around 160 kWh at 8.0 stars" />
+        </div>
+      </div>
+
+      <div class="insight-callout">
+        <h3>Recommendation</h3>
+        <p>
+          For consumers, the most efficient upgrade path is: pick the smallest screen size
+          that comfortably suits the room, then compare energy star ratings within that size
+          before choosing between LCD, LCD (LED) and OLED. For regulators and researchers, the
+          data suggests star ratings remain a meaningful signal worth keeping visible at the
+          point of sale, particularly as screen sizes continue to trend upward.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <h2>About the data</h2>
+      <p class="section__lede">
+        This story is based on the TV Energy Consumption dataset provided as part of the
+        course materials. Figures shown in the charts above are illustrative summaries drawn
+        from that dataset for storytelling purposes.
+      </p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Data source</h3>
+          <p>Television model and energy consumption data supplied as part of the course
+            materials, covering power usage, screen size, display technology and efficiency
+            ratings.</p>
+        </article>
+        <article class="card">
+          <h3>Data processing</h3>
+          <p>The dataset was cleaned of missing or inconsistent values, and relevant
+            attributes were summarised into the size, technology and rating groupings shown
+            above.</p>
+        </article>
+        <article class="card">
+          <h3>Privacy</h3>
+          <p>The dataset contains no personal or sensitive information — only product
+            specifications and energy consumption figures.</p>
+        </article>
+        <article class="card">
+          <h3>Accuracy &amp; limitations</h3>
+          <p>The dataset may not cover every model on the market, some entries may be
+            outdated, and real-world power draw depends on individual usage and picture
+            settings.</p>
+        </article>
+      </div>
+      <p style="margin-top:1.2rem;">
+        See the project <a href="about.html">About Us</a> page for the team, or try the
+        <a href="televisions.html">energy calculator</a> to estimate a specific set's running
+        cost.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <span>&copy; <span id="year"></span> Appliance Energy Consumption Website</span>
+      <span>Built by [Your Name]</span>
+      <p class="footer__genai">
+        Generative AI acknowledgement: parts of this website's code and placeholder content
+        were developed with the assistance of a Generative AI tool. All code was reviewed and
+        understood before submission.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

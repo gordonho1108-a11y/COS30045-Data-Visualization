@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercise 4.1: SVG House and Garden - Before and After</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 1.4rem;
+      color: #222;
+    }
+    h2 {
+      font-size: 1.1rem;
+      color: #333;
+      margin: 2rem auto 0.5rem;
+      max-width: 900px;
+    }
+    .caption {
+      max-width: 900px;
+      margin: 0 auto 0.5rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    .responsive-svg-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 1.5rem;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+      border: 1px solid #333;
+      background: #ffffff;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercise 4.1 &mdash; SVG House and Garden</h1>
+
+  <!-- ================================================================ -->
+  <!-- BEFORE: initial, plain version (like an unedited GenAI first draft) -->
+  <!-- ================================================================ -->
+  <h2>Before &mdash; initial GitHub Copilot code</h2>
+  <p class="caption">
+    Plain house: basic shapes only, no path, no grouping/transform, no chimney,
+    no garden details, flat colours with no styling attributes.
+  </p>
+  <div class="responsive-svg-container">
+    <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- sky -->
+      <rect x="0" y="0" width="900" height="420" fill="#87ceeb" />
+
+      <!-- sun -->
+      <circle cx="790" cy="90" r="50" fill="#ffdd33" />
+
+      <!-- ground -->
+      <rect x="0" y="420" width="900" height="180" fill="#3f9d3f" />
+
+      <!-- tree: plain, ungrouped shapes -->
+      <rect x="112" y="400" width="16" height="70" fill="#7a4a26" />
+      <circle cx="120" cy="370" r="55" fill="#2e7d32" />
+
+      <!-- house: plain rectangle body + triangle roof (as a polygon, not a path) -->
+      <rect x="360" y="320" width="220" height="160" fill="#a0522d" />
+      <polygon points="340,320 470,220 600,320" fill="#8b3a2a" />
+
+      <!-- door -->
+      <rect x="450" y="410" width="40" height="70" fill="#5a2d0c" />
+
+      <!-- windows: plain, no bars, no grouping -->
+      <rect x="385" y="355" width="45" height="45" fill="#bfe6f5" />
+      <rect x="510" y="355" width="45" height="45" fill="#bfe6f5" />
+
+    </svg>
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- AFTER: customised version -->
+  <!-- ================================================================ -->
+  <h2>After &mdash; customised drawing</h2>
+  <p class="caption">
+    Added: clouds, winding garden path (SVG path with curves), chimney, window
+    cross-bars, picket fence, grouped elements with <code>transform="translate(...)"</code>,
+    and styling (<code>stroke</code>, <code>stroke-width</code>, <code>fill-opacity</code>,
+    <code>stroke-dasharray</code>, <code>rx</code>).
+  </p>
+  <div class="responsive-svg-container">
+    <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- ============ SKY ============ -->
+      <rect x="0" y="0" width="900" height="420" fill="#87ceeb" />
+
+      <!-- ============ SUN (circle) ============ -->
+      <circle cx="790" cy="90" r="50" fill="#ffdd33" stroke="#e6b800" stroke-width="3" />
+
+      <!-- ============ CLOUDS (grouped ellipses, styling: fill-opacity) ============ -->
+      <g fill="#ffffff" fill-opacity="0.85">
+        <ellipse cx="180" cy="90" rx="45" ry="22" />
+        <ellipse cx="220" cy="80" rx="35" ry="18" />
+        <ellipse cx="140" cy="85" rx="30" ry="16" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.7">
+        <ellipse cx="500" cy="60" rx="40" ry="18" />
+        <ellipse cx="535" cy="52" rx="28" ry="14" />
+      </g>
+
+      <!-- ============ GROUND ============ -->
+      <rect x="0" y="420" width="900" height="180" fill="#3f9d3f" />
+
+      <!-- ============ PATH: winding garden path (curve) ============ -->
+      <path d="M 430 600 C 410 520, 470 500, 450 460 S 420 420, 440 400"
+            fill="none" stroke="#d9a441" stroke-width="26"
+            stroke-linecap="round" />
+      <path d="M 430 600 C 410 520, 470 500, 450 460 S 420 420, 440 400"
+            fill="none" stroke="#c98f2c" stroke-width="4"
+            stroke-dasharray="10,10" />
+
+      <!-- ============ TREE (grouped: trunk + canopy, transform positions the whole group) ============ -->
+      <g transform="translate(120,340)">
+        <!-- trunk -->
+        <rect x="-8" y="60" width="16" height="70" fill="#7a4a26" />
+        <!-- canopy -->
+        <circle cx="0" cy="30" r="55" fill="#2e7d32" />
+        <circle cx="-35" cy="55" r="35" fill="#2e7d32" />
+        <circle cx="35" cy="55" r="35" fill="#2e7d32" />
+      </g>
+
+      <!-- ============ HOUSE BODY (grouped, transform to position) ============ -->
+      <g transform="translate(360,260)">
+        <!-- main wall -->
+        <rect x="0" y="60" width="220" height="160" fill="#a0522d" stroke="#6b3a1f" stroke-width="2" />
+
+        <!-- roof (path: simple triangle using a path for variety) -->
+        <path d="M -20 60 L 110 -40 L 240 60 Z" fill="#8b3a2a" stroke="#5e2418" stroke-width="2" />
+
+        <!-- door -->
+        <rect x="90" y="150" width="40" height="70" rx="4" fill="#5a2d0c" stroke="#3a1c06" stroke-width="2" />
+        <circle cx="122" cy="188" r="3" fill="#f0c419" />
+
+        <!-- windows (grouped so both share identical styling) -->
+        <g fill="#bfe6f5" stroke="#3a1c06" stroke-width="3">
+          <rect x="25" y="95" width="45" height="45" />
+          <rect x="150" y="95" width="45" height="45" />
+        </g>
+        <!-- window cross bars -->
+        <g stroke="#3a1c06" stroke-width="2">
+          <line x1="47.5" y1="95" x2="47.5" y2="140" />
+          <line x1="25" y1="117.5" x2="70" y2="117.5" />
+          <line x1="172.5" y1="95" x2="172.5" y2="140" />
+          <line x1="150" y1="117.5" x2="195" y2="117.5" />
+        </g>
+
+        <!-- chimney -->
+        <rect x="170" y="-90" width="30" height="60" fill="#7a4a26" stroke="#5e3a1c" stroke-width="2" />
+      </g>
+
+      <!-- ============ FENCE (repeated lines, styling) ============ -->
+      <g stroke="#b5651d" stroke-width="4">
+        <line x1="620" y1="470" x2="620" y2="420" />
+        <line x1="650" y1="470" x2="650" y2="420" />
+        <line x1="680" y1="470" x2="680" y2="420" />
+        <line x1="710" y1="470" x2="710" y2="420" />
+        <line x1="740" y1="470" x2="740" y2="420" />
+        <line x1="615" y1="435" x2="745" y2="435" />
+        <line x1="615" y1="455" x2="745" y2="455" />
+      </g>
+
+    </svg>
+  </div>
+
+</body>
+</html>
