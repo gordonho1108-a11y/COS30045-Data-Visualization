@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charts | Appliance Energy Consumption Website</title>
+  <meta name="description" content="D3 charts: which TV screen type uses the most energy, and how the electricity spot price has changed since 1998." />
+  <link rel="icon" href="assets/img/PowerIcon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="index.html" aria-label="Appliance Energy Consumption Website — go to Home">
+        <img class="nav__logo" src="assets/img/PowerIcon.png" alt="Power logo" />
+        <span class="nav__title">Appliance Energy<span>Consumption Website</span></span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="televisions.html">Televisions</a></li>
+        <li><a href="charts.html" class="is-active" aria-current="page">Charts</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div>
+        <p class="hero__eyebrow">Data visualisation</p>
+        <h1>What TV screen type uses the most energy?</h1>
+        <p>
+          Energy use is closely related to screen size, so to compare screen technologies
+          fairly this chart only looks at 55 inch televisions, the median screen size in the
+          cleaned data set. Each bar shows the mean labelled energy consumption for one
+          screen technology.
+        </p>
+      </div>
+      <div class="hero__art">
+        <img class="bolt-badge" src="assets/img/PowerIcon.png" alt="" aria-hidden="true" />
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Mean energy consumption by screen type</h2>
+      <p class="section__lede">55 inch televisions only. Bars are sorted from highest to lowest.</p>
+
+      <!-- D3 draws the chart into this div (Exercise 5.1) -->
+      <div id="bar-chart" class="chart-card"></div>
+    </section>
+
+    <section class="section">
+      <h2>Electricity spot price over time</h2>
+      <p class="section__lede">
+        Average wholesale electricity spot price in Australia, 1998&ndash;2024
+        (excludes Tasmania and Snowy, which do not cover the full time span).
+        Circles mark each year's average price; the line joins them to show the trend.
+      </p>
+
+      <!-- D3 draws the chart into this div (Exercise 5.2) -->
+      <div id="line-chart" class="chart-card"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <span>&copy; <span id="year"></span> Appliance Energy Consumption Website</span>
+      <span>Built by Gordon Ho</span>
+    </div>
+  </footer>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/bar-chart.js"></script>
+  <script src="assets/js/line-chart.js"></script>
+</body>
+</html>
