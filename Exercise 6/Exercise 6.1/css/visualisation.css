@@ -1,0 +1,46 @@
+/* ---------------------------------- */
+/* Chart card                         */
+/* ---------------------------------- */
+.chart-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--amber);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+/* SVG scales with its container instead of using a fixed pixel size */
+.responsive-svg-container {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.responsive-svg-container text {
+  font-family: var(--font-display);
+  fill: var(--ink);
+}
+
+.responsive-svg-container .axis-label {
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--brown-dark);
+}
+
+.responsive-svg-container .x-axis text,
+.responsive-svg-container .y-axis text {
+  font-size: 11px;
+  fill: var(--brown);
+}
+
+.responsive-svg-container .x-axis path,
+.responsive-svg-container .y-axis path,
+.responsive-svg-container .x-axis line,
+.responsive-svg-container .y-axis line {
+  stroke: var(--line);
+}
+
+.chart-error {
+  color: #a3341c;
+  margin: 0;
+}

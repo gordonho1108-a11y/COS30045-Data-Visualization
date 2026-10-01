@@ -1,0 +1,36 @@
+/* style.css – general page styles (the "base.css" from the exercise) */
+:root {
+  --cream: #fffaf0;
+  --brown-dark: #4a3c26;
+  --brown: #6b5738;
+  --orange: #d2691e;
+  --ink: #3a2e1f;
+  --font: "Roboto", "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: #f3efe6;
+  line-height: 1.5;
+}
+
+.page-header {
+  background: var(--orange);
+  padding: 1rem 1.5rem;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--brown-dark);
+}
+
+.page-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}

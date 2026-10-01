@@ -1,0 +1,227 @@
+/* ==========================================================================
+   TV Energy Consumption — Exercise 6.1
+   Palette and layout patterns reused from the Appliance Energy Consumption
+   Website (Exercise 0.2), so this page matches the rest of the site.
+   ========================================================================== */
+
+:root {
+  --cream: #f7e9ab;
+  --cream-soft: #fbf3d2;
+  --brown: #6b5738;
+  --brown-dark: #4a3c26;
+  --amber: #e8a13d;
+  --amber-dark: #c97f1e;
+  --paper: #fffdf6;
+  --ink: #3a2e1f;
+  --line: #e3d6a8;
+
+  --font-display: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "Georgia", "Iowan Old Style", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  background-image: linear-gradient(180deg, var(--cream-soft) 0%, var(--paper) 340px);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--amber-dark);
+}
+
+/* ---------------------------------- */
+/* Skip link (accessibility)          */
+/* ---------------------------------- */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--brown);
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ---------------------------------- */
+/* Top bar (brand only — this is a    */
+/* standalone exercise, so no nav     */
+/* links to other pages)              */
+/* ---------------------------------- */
+.site-header {
+  background: var(--brown);
+  border-bottom: 4px solid var(--amber);
+}
+
+.nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--cream);
+  flex-shrink: 0;
+}
+
+.nav__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.nav__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.nav__title span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--cream-soft);
+  opacity: 0.75;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------- */
+/* Hero                               */
+/* ---------------------------------- */
+.hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2rem;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: var(--amber-dark);
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--brown-dark);
+  margin: 0 0 0.9rem;
+  line-height: 1.15;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 46ch;
+}
+
+.hero__art {
+  justify-self: center;
+}
+
+.bolt-badge {
+  width: 140px;
+  height: 140px;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero__art {
+    order: -1;
+  }
+  .bolt-badge {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* ---------------------------------- */
+/* Section shell                      */
+/* ---------------------------------- */
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.4rem 1.25rem;
+}
+
+.section h2 {
+  font-family: var(--font-display);
+  color: var(--brown-dark);
+  font-size: 1.5rem;
+  margin: 0 0 0.3rem;
+}
+
+.section__lede {
+  color: var(--brown);
+  margin: 0 0 1.6rem;
+  max-width: 60ch;
+}
+
+.data-source {
+  font-size: 0.85rem;
+  color: var(--brown);
+  margin-top: 1rem;
+}
+
+/* ---------------------------------- */
+/* Footer                             */
+/* ---------------------------------- */
+.site-footer {
+  background: var(--brown-dark);
+  color: var(--cream-soft);
+  margin-top: 2rem;
+}
+
+.footer__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.6rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
