@@ -1,8 +1,5 @@
-// ==========================================================================
 // Appliance Energy Consumption Website — shared JavaScript
 // Handles: footer year, FAQ accordion, appliance energy calculator
-// ==========================================================================
-
 document.addEventListener("DOMContentLoaded", function () {
   setFooterYear();
   initFaqAccordion();
