@@ -1,9 +1,3 @@
-// ==========================================================================
-// Exercise 5.1 — Vertical bar chart with axes (D3 v7)
-// Question: what TV screen type consumes the most energy? (55-inch TVs only)
-// D3 workflow: Find -> Load -> Format/Measure -> Bind -> Scale
-// ==========================================================================
-
 const drawBarChart = data => {
   // ---- 1. Inner chart margins and dimensions (D3 margin convention) ----
   const margin = { top: 40, right: 170, bottom: 25, left: 40 };
